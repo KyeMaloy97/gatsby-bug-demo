@@ -5,5 +5,47 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: false,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        // plugins: [`gatsby-remark-images`, `gatsby-remark-autolink-headers`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `header-link-icon`
+            }
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: true,
+              maxWidth: 1000,
+              wrapperStyle: result => `width: 100%;margin-left: 0;`,
+
+            }
+          }
+        ],
+      }
+    },
+    `gatsby-plugin-sharp`,
+  ]
 }
