@@ -16,7 +16,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
-    "gatsby": "^2.18.4",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-mdx": "^1.0.58",
     "gatsby-plugin-sharp": "^2.3.4",
     "gatsby-remark-autolink-headers": "^2.1.19",
